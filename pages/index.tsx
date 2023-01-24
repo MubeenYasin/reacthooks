@@ -1,8 +1,15 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useState } from 'react'
+import Button from '../components/Button'
+import Message from '../components/Message'
+import MessageCTC from '../components/MessageCTC'
 
 
 export default function Home() {
+  const [num, setNum] = useState(0)
+  const [num2, setNum2] = useState(0)
+
   return (
     <>
       <Head>
@@ -14,6 +21,12 @@ export default function Home() {
 
       <Link href={'/hooks/State'}>useState</Link><br/>
       <Link href={'/hooks/Effect'}>useEffect</Link>
+
+      <Message count={num}/>
+      <Button  count={num} upDate={(num) => setNum(num)}/> 
+      <hr />
+
+      <MessageCTC count={num2} upDate={(num) => setNum2(num)}/>
      </>
   )
 }
