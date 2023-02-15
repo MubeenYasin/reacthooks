@@ -5,6 +5,8 @@ import Button from '../components/Button'
 import Message from '../components/Message'
 import MessageCTC from '../components/MessageCTC'
 
+import { myVar } from '../data/Constant'
+import { myObject } from '../data/Objects'
 
 export default function Home() {
   const [num, setNum] = useState(0)
@@ -18,7 +20,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      <h1>{myVar}</h1>
+      <h1>{myObject.name}</h1>
+      <h1>{myObject.age}</h1>
+      <h1>{(myObject.status)? 'Activated' : 'Blocked'}</h1>
       <Link href={'/hooks/State'}>useState</Link><br/>
       <Link href={'/hooks/Effect'}>useEffect</Link>
 
